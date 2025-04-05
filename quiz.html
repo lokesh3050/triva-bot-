@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trivia - Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-sun"></i>
+                <h1>  Trivia Quiz</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="quiz.html" class="active">Play Now</a>
+            </nav>
+        </header>
+
+        <main class="quiz-container">
+            <div class="setup-screen">
+                <h2>Quiz Settings</h2>
+                <div class="settings">
+                    <div class="setting">
+                        <label for="category">Category:</label>
+                        <select id="category">
+                            <option value="any">Any Category</option>
+                            <option value="9">General Knowledge</option>
+                            <option value="10">Books</option>
+                            <option value="11">Films</option>
+                            <option value="12">Music</option>
+                            <option value="17">Science & Nature</option>
+                            <option value="18">Computers</option>
+                            <option value="21">Sports</option>
+                            <option value="22">Geography</option>
+                            <option value="23">History</option>
+                        </select>
+                    </div>
+                    <div class="setting">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="any">Any Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="setting">
+                        <label for="amount">Number of Questions:</label>
+                        <select id="amount">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn">Start Quiz <i class="fas fa-play"></i></button>
+            </div>
+
+            <div class="quiz-screen hidden">
+                <div class="quiz-header">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="timer">Time: <span id="time">30</span>s</div>
+                    <div class="question-count">Question <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+                </div>
+                <div id="question" class="question"></div>
+                <div id="options" class="options"></div>
+                <button id="next-btn" class="btn hidden">Next Question <i class="fas fa-forward"></i></button>
+            </div>
+
+            <div class="results-screen hidden">
+                <h2>Quiz Results</h2>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="result-details">
+                        <div class="result-stat">Your Score: <span id="final-score">0</span>/<span id="max-score">10</span></div>
+                        <div class="result-stat">Correct Answers: <span id="correct-answers">0</span></div>
+                        <div class="result-stat">Time Taken: <span id="time-taken">0</span> seconds</div>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button id="restart-btn" class="btn"><i class="fas fa-redo"></i> Play Again</button>
+                    <button id="new-quiz-btn" class="btn"><i class="fas fa-home"></i> New Quiz</button>
+                </div>
+            </div>
+
+            <div class="loading-screen hidden">
+                <div class="loader"></div>
+                <p>Preparing your quiz...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
